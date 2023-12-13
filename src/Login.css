@@ -1,0 +1,83 @@
+/* Login.css */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', Arial, sans-serif;
+  background-color: white;
+  color: #7282A7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-box {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-box h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #3AB654;
+}
+
+.login-box .image-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.login-box .image-container img {
+  width: 30%;
+  height: auto;
+}
+
+.login-box .main-logo {
+  display: block;
+  margin: 0 auto 20px;
+  max-width: 80%;
+  height: auto;
+}
+
+.login-box .ui.form .field {
+  margin-bottom: 15px;
+}
+
+.login-box input {
+  width: calc(100% - 10px);
+  padding: 8px 12px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #B7E4C1;
+}
+
+.login-box .ui.button {
+  width: auto; /* Adjust width as needed */
+  background-color: #3AB654;
+  color: white;
+  border: 1 px;
+  padding: 6px 10px; 
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  font-size: 20px; /* Adjust font size */
+}
+
+.login-box .ui.button:hover {
+  background-color: #B7E4C1;
+  color: white;
+}
+
+.login-box .ui.message {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.login-box .ui.message a {
+  text-decoration: underline;
+}
