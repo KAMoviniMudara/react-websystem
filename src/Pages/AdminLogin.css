@@ -1,0 +1,41 @@
+/* AdminLogin.css */
+
+.admin-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: flex-start;
+}
+
+.sidebar {
+  background-color: #294179;
+  padding: 15px;
+}
+
+.taskbar {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  padding: 0;
+}
+
+.taskbar li {
+  margin-right: 20px;
+}
+
+.taskbar a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.taskbar a:hover {
+  background-color: #00a65a;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+}

@@ -1,55 +1,72 @@
+/* Register.css */
+
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Roboto', Arial, sans-serif; /* Added Roboto as a backup font */
-  background-color:#294179; /* Background color */
-  color: #294179; /* Main text color */
-
-}
-
-.register-container {
+  font-family: 'Roboto', Arial, sans-serif;
+  background-color: white;
+  color: #7282A7;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+}
+
+.register-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100vh;
   color: #7282A7;
+  width: 100%;
 }
 
 .register-box {
   width: 100%;
   max-width: 450px;
-  padding: 20px;
-  border-radius: 5px;
-
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .register-box h2 {
   text-align: center;
   margin-bottom: 20px;
   color: #3AB654;
- 
 }
 
 .register-box .field {
   margin-bottom: 15px;
 }
 
-
 .register-box input {
-  width: calc(100% - 10px); 
-  padding: 6px 10px; 
+  width: calc(100% - 10px);
+  padding: 6px 10px;
   margin-bottom: 10px;
   border-radius: 3px;
-  border: 1px solid #B7E4C1; 
+  border: 1px solid #B7E4C1;
+}
+
+.main-logo {
+  max-width: 400px; /* Adjust the max-width as needed */
+  margin-bottom: 20px;
+  size-adjust: 1000px;
+  /* Add more styles to your image if required */
+}
+
+.register-box {
+  text-align: center;
+}
+
+.register-box h2 {
+  margin-bottom: 20px;
+  color: #3AB654;
 }
 
 .register-box .ui.button {
   width: auto; /* Adjust width as needed */
   background-color: #3AB654;
   color: white;
-  border: 1 px;
-  padding: 6px 10px; 
+  border: 1px solid transparent;
+  padding: 6px 10px;
   border-radius: 4px;
   transition: background-color 0.3s ease;
   font-size: 20px; /* Adjust font size */

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './Register.css';
+import logo from './sltmobitel.svg';
 
 const Register = () => {
   const [userName, setUserName] = useState('');
@@ -15,12 +16,13 @@ const Register = () => {
       const response = await axios.post('localhost:8080/api/v1/user/register', { userName, email, password });
       console.log(response.data);
     } catch (error) {
-      setError('Registration failed. Please try again.'); // Handle registration failure
+      setError('Registration failed. Please try again.');
     }
   };
 
   return (
     <div className="register-container">
+      <img src={logo} alt="Main Logo" className="main-logo" />
       <div className="register-box">
         <h2 className="ui header centered teal">Register</h2>
         <form className="ui form" onSubmit={handleSubmit}>

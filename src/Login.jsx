@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom';
 import './Login.css';
 import { Icon } from 'semantic-ui-react';
 
-import logoImage1 from './logo.png';
-import logoImage2 from './logo2.png';
 import logo from './sltmobitel.svg';
 
 const Login = () => {
@@ -23,11 +21,8 @@ const Login = () => {
   };
 
   return (
+  <table>
     <div className="login-box">
-      <div className="image-container">
-        <img src={logoImage2} alt="First Logo" className="left-logo" />
-        <img src={logoImage1} alt="Second Logo" className="right-logo" />
-      </div>
       <img src={logo} alt="Main Logo" className="main-logo" />
       <h2 className="ui header centered teal">Welcome Back!</h2>
       <div className="login-content">
@@ -69,6 +64,7 @@ const Login = () => {
         </div>
       </div>
     </div>
+    </table>
   );
 };
 
