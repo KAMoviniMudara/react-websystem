@@ -29,28 +29,32 @@ const AdminLogin = () => {
 
   return (
     <div className="admin-container">
+      {/* Sidebar */}
       <div className="sidebar">
         <header>
           <nav>
             <ul className="taskbar">
               <li>
-                <a  onClick={handleReportClick}>Reports</a>
+                <button onClick={handleReportClick}>Report</button>
               </li>
               <li>
-                <a  onClick={handleIssuesClick}>Issues</a>
+                <button onClick={handleIssuesClick}>Issues</button>
               </li>
               <li>
-                <a  onClick={handleCategoriesClick}>Categories</a>
+                <button onClick={handleCategoriesClick}>Categories</button>
               </li>
             </ul>
           </nav>
         </header>
       </div>
+
+      {/* Main content */}
       <main className="content">
         {showReport && <Reports />}
         {showIssues && <Issues />}
         {showCategories && <Categories />}
       </main>
+      <div className="bottom-bar"></div>
     </div>
   );
 };

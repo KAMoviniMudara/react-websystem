@@ -1,39 +1,73 @@
+
 import React, { useState } from 'react';
-import './EntityStyle.css'; 
+import './EntityStyle.css';
 
 export default function Issues() {
-  const [issueData, setIssueData] = useState({
-    category: '',
-    issueTitle: ''
+  const [issueTitleData, setIssueTitleData] = useState({
+    title: '',
+    categoryID: ''
   });
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setIssueData({ ...issueData, [name]: value });
+    setIssueTitleData({ ...issueTitleData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(issueData); 
+
+    try {
+      const response = await fetch('http://localhost:8080/api/issue-titles/add', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(issueTitleData)
+      });
+
+      if (response.ok) {
+        console.log('Issue Title added successfully!');
+        // Handle success state or reset form if needed
+      } else {
+        console.error('Error adding Issue Title:', await response.text());
+        // Handle error state or display error message
+      }
+    } catch (error) {
+      console.error('Error adding Issue Title:', error.message);
+      // Handle error state or display error message
+    }
   };
 
   return (
-    <div className="entity-container ">
-      <h2>Issues</h2>
+    <div className="entity-container">
+      <h2>Add Issue Title</h2>
       <form onSubmit={handleSubmit} className="form-container">
         <div className="form-column">
           <label className="form-label">
-            Category:
-            <input type="text" name="category" value={issueData.category} onChange={handleInputChange} className="form-input" />
+            Title:
+            <input
+              type="text"
+              name="title"
+              value={issueTitleData.title}
+              onChange={handleInputChange}
+              className="form-input"
+            />
           </label>
           <label className="form-label">
-            Issue Title:
-            <input type="text" name="issueTitle" value={issueData.issueTitle} onChange={handleInputChange} className="form-input" />
+            Category ID:
+            <input
+              type="text"
+              name="categoryID"
+              value={issueTitleData.categoryID}
+              onChange={handleInputChange}
+              className="form-input"
+            />
           </label>
-          </div>
-          <button className="ui button" type="submit">Submit</button>
-        </form>
-         </div>
-
+        </div>
+        <button className="ui button" type="submit">
+          Submit
+        </button>
+      </form>
+    </div>
   );
 }

@@ -1,84 +1,63 @@
-/* Login.css */
-
-body {
+.body {
   margin: 0;
   padding: 0;
   font-family: 'Roboto', Arial, sans-serif;
   background-color: white;
-  color: #7282A7;
+  color: #7282a7;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  width: 40vw;
 }
 
 .login-box {
-  width: 270%; /* Adjust to your preference */
-  max-width: 1000px; /* Adjust the max-width as needed */
-  margin: 0 auto;
-  padding: 20px;
-  border-radius: 8px;
-  text-align: center;
-  align-items: center;
+  width: 800%; 
+  max-width: 1800px; 
 }
 
-.login-box .main-logo {
+.main-logo {
   display: block;
-  margin: 0 auto px; /* Increase margin to create space below the main image */
-  max-width: 300%; /* Ensure the main image takes up the available width */
-  height: auto;
+  max-width: 800%; 
 }
 
-.login-box h2 {
-  text-align: center;
+h2 {
   margin-bottom: 20px;
-  color: #3AB654;
+  color: #3ab654;
 }
 
-.login-box .image-container {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
-}
-
-.login-box .image-container img {
-  width: 30%;
-  height: auto;
-}
-
-.login-box .ui.form .field {
+.ui.form .field {
   margin-bottom: 15px;
 }
 
-.login-box input {
-  width: calc(100% - 10px);
-  padding: 8px 12px;
-  margin-bottom: 10px;
-  border-radius: 5px;
-  border: 1px solid #B7E4C1;
+input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 2px;
+  border: 2px solid #b7e4c1;
 }
 
-.login-box .ui.button {
-  width: auto;
-  background-color: #3AB654;
+.ui.button {
+  width: 100%;
+  background-color: #3ab654;
   color: white;
   border: 1px solid transparent;
-  padding: 6px 10px;
+  padding: 12px;
   border-radius: 4px;
   transition: background-color 0.3s ease;
   font-size: 20px;
 }
 
-.login-box .ui.button:hover {
-  background-color: #B7E4C1;
+.ui.button:hover {
+  background-color: #b7e4c1;
   color: white;
 }
 
-.login-box .ui.message {
+.ui.message {
   text-align: center;
   margin-top: 20px;
 }
 
-.login-box .ui.message a {
+.ui.message a {
   text-decoration: underline;
 }

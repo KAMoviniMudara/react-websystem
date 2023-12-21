@@ -1,8 +1,15 @@
 .entity-container { 
-    border-radius: 5px;
-    background-color: white; 
-    color: #294179; 
-  }
+ border-radius: 20px;
+  background-color: white;
+  color: #294179;
+  width: 100%; 
+  border-top: 3px solid #3AB654; 
+  padding-top: 100px; 
+  padding-left: 350px; 
+  box-sizing: border-box; 
+  
+
+}
   
   .form-label {
     display: block;
