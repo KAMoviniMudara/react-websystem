@@ -29,7 +29,6 @@ const AdminLogin = () => {
 
   return (
     <div className="admin-container">
-      {/* Sidebar */}
       <div className="sidebar">
         <header>
           <nav>
@@ -38,7 +37,7 @@ const AdminLogin = () => {
                 <button onClick={handleReportClick}>Report</button>
               </li>
               <li>
-                <button onClick={handleIssuesClick}>Issues</button>
+                <button onClick={handleIssuesClick}>Issue Titles</button>
               </li>
               <li>
                 <button onClick={handleCategoriesClick}>Categories</button>
@@ -48,7 +47,6 @@ const AdminLogin = () => {
         </header>
       </div>
 
-      {/* Main content */}
       <main className="content">
         {showReport && <Reports />}
         {showIssues && <Issues />}

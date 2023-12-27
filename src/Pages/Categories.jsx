@@ -1,64 +1,56 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
-import './EntityStyle.css'; 
+import './EntityStyle.css';
 
-const Category = () => {
-  const [categories, setCategories] = useState([]);
-  const [newCategoryName, setNewCategoryName] = useState('');
-  const [successMessage, setSuccessMessage] = useState('');
-  const [errorMessage, setErrorMessage] = useState('');
+export default function Categories() {
+  const [newCategory, setNewCategory] = useState('');
 
-  useEffect(() => {
-    fetchCategories();
-  }, []);
-
-  const fetchCategories = async () => {
-    try {
-      const response = await axios.get('http://localhost:8080/api/categories/add');
-      setCategories(response.data);
-    } catch (error) {
-      console.error('Error fetching categories:', error);
-    }
+  const handleInputChange = (e) => {
+    setNewCategory(e.target.value);
   };
 
-  const handleAddCategory = async () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
     try {
       const response = await axios.post('http://localhost:8080/api/categories/add', {
-        categoryName: newCategoryName,
+        categoryName: newCategory,
       });
-      setCategories([...categories, response.data]);
-      setNewCategoryName('');
-      setSuccessMessage('Category added successfully!');
-      setErrorMessage('');
+
+      if (response.status === 200) {
+        console.log('Category added successfully');
+        setNewCategory('');
+      } else {
+        throw new Error('Failed to add category');
+      }
     } catch (error) {
-      console.error('Error adding category:', error.response ? error.response.data : error.message);
-      setSuccessMessage('');
-      setErrorMessage('Error adding category. Please try again.');
+      console.error('Error adding category:', error);
     }
   };
-  
+
 
   return (
-    <div>
-      <h2>Categories</h2>
-      <div>
-        <input
-          type="text"
-          placeholder="Enter category name"
-          value={newCategoryName}
-          onChange={(e) => setNewCategoryName(e.target.value)}
-        />
-        <button onClick={handleAddCategory}>Add</button>
-      </div>
-      {successMessage && <div>{successMessage}</div>}
-      {errorMessage && <div>{errorMessage}</div>}
-      <ul>
-        {categories.map((category) => (
-          <li key={category.categoryID}>{category.categoryName}</li>
-        ))}
-      </ul>
+    <div className="entity-container">
+      <h2>Add Category</h2>
+      <form onSubmit={handleSubmit} className="form-container">
+        <div className="form-column">
+          <label className="form-label">
+            Category Name:
+            <input
+              className="form-input"
+              type="text"
+              value={newCategory}
+              onChange={handleInputChange}
+            />
+          </label>
+        </div>
+        <div className="form-column">
+          <button className="ui button" type="submit">
+            Add
+          </button>
+        
+        </div>
+      </form>
     </div>
   );
-};
-
-export default Category;
+}

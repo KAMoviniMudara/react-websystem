@@ -30,7 +30,6 @@ export default function ResolvedIssues() {
   });
 
   const [usernames, setUsernames] = useState([]);
-  const [categories, setCategories] = useState([]); // Added categories state
 
   useEffect(() => {
     async function fetchData() {
@@ -38,8 +37,6 @@ export default function ResolvedIssues() {
         const userResponse = await axios.get('http://localhost:8080/api/v1/user/userNames');
         setUsernames(userResponse.data);
 
-        const categoryResponse = await axios.get('http://localhost:8080/api/categories/categoryNames');
-        setCategories(categoryResponse.data);
       } catch (error) {
         console.error('Error fetching data:', error.message);
       }
@@ -52,13 +49,6 @@ export default function ResolvedIssues() {
     setIssueData({ ...issueData, [name]: value });
   };
 
-  const renderCategoryOptions = (options) => {
-    return categoryNames.map((categoryName) => (
-      <option key={categoryName} value={categoryName}>
-        {categoryName}
-      </option>
-    ));
-  };
 
   const renderUserOptions = () => {
     return usernames.map((username) => (
@@ -87,7 +77,7 @@ export default function ResolvedIssues() {
               className="form-input"
             >
               <option value="">Select category</option>
-              {renderOptions(categories)}
+              
             </select>
           </label>
           <label className="form-label">

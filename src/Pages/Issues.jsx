@@ -40,7 +40,7 @@ export default function Issues() {
 
   return (
     <div className="entity-container">
-      <h2>Add Issue Title</h2>
+      <h2>Issue Title</h2>
       <form onSubmit={handleSubmit} className="form-container">
         <div className="form-column">
           <label className="form-label">
